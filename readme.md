@@ -1,6 +1,9 @@
 # Paypal integration example
 
+start the application navigate to http://localhost:4567/ and start the payment.
 
+goto https://www.sandbox.paypal.com and login with your business sandbox account
+to see transactions.
 
 ## Express Checkout Flow
 https://developer.paypal.com/docs/integration/direct/express-checkout/integration-jsv4/checkout-flow/
