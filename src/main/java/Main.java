@@ -14,8 +14,8 @@ import static spark.Spark.post;
 public class Main {
     public static void main(String[] args) {
 
-        String clientID = "yourclientid";
-        String clientSecret ="yoursecret";
+        String clientID = "AcBXfMavHCM3dequcdwz5leE8xP6OGZ3rQ4oSO5uAdcLlvp_MdBMHLp_GigBa8e9t_8PWA-y4ITDMKg-";
+        String clientSecret ="EFozFGirKiS1ecDTCykRcrcPZhQ0AL59UK1l47Uh1mXORzxqPGHu5cjOBeYLBDPNGdGTAc_SBPkdpOD0";
         String mode ="sandbox";
         Spark.staticFileLocation("/public");
         Spark.exception(Exception.class, (exception, request, response) -> {
