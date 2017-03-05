@@ -1,0 +1,42 @@
+<html>
+<head>
+
+</head>
+<body>
+<h1>Paypal Payments Test</h1>
+
+<div id="paymentMethods"></div>
+
+
+<script src="https://www.paypalobjects.com/api/checkout.js" data-version-4></script>
+
+<script>
+    var CREATE_PAYMENT_URL  = 'http://localhost:4567/api/paypal/create-payment';
+    var EXECUTE_PAYMENT_URL ='http://localhost:4567/api/paypal/execute-payment';
+    paypal.Button.render({
+        env: 'sandbox',
+        payment: function(resolve, reject) {
+            paypal.request.post(CREATE_PAYMENT_URL)
+                .then(function(data) { resolve(data.token); })
+            .catch(function(err) { reject(err); });
+        },
+
+        onAuthorize: function(data, actions) {
+
+            // Note: you can display a confirmation page before executing
+
+            paypal.request.post(EXECUTE_PAYMENT_URL,
+                { paymentID: data.paymentID, payerID: data.payerID })
+
+                .then(function(data) { console.log(data);/* Go to a success page */ })
+                .catch(function(err) { console.log(err);/* Go to an error page  */ });
+        },
+
+        onCancel: function(data, actions) {
+            return actions.redirect();
+        }
+
+    }, '#paymentMethods');
+</script>
+</body>
+</html>
