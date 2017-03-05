@@ -5,13 +5,6 @@ start the application navigate to http://localhost:4567/ and start the payment.
 goto https://www.sandbox.paypal.com and login with your business sandbox account
 to see transactions.
 
-## Express Checkout Flow
-https://developer.paypal.com/docs/integration/direct/express-checkout/integration-jsv4/checkout-flow/
-
-## Create Paypal 
-https://developer.paypal.com/docs/integration/direct/payments/paypal-payments/
-
-
 ## Steps of payment
 STEPS:
 1. create payment
@@ -22,5 +15,12 @@ When you create a payment for a PayPal payment, the customer must approve the pa
 3. Execute payment
 To execute the payment after the customer's approval, make a /payment/execute/ call. In the JSON request body, use the payerID value that was passed to your site. In the header, use the access token that you used when you created the payment.
 
-Angularjs integration 
+## Angularjs integration 
 https://github.com/paypal/paypal-checkout/blob/master/demo/angular.htm
+
+## Links
+- Express Checkout Flow https://developer.paypal.com/docs/integration/direct/express-checkout/integration-jsv4/checkout-flow/
+
+## Rest Urls
+
+- create payment https://developer.paypal.com/docs/integration/direct/payments/paypal-payments/
